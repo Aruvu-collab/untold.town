@@ -11,3 +11,18 @@
 .gh-head-menu::after {
     display: none;
 }
+
+.gh-head{
+    height: 70px
+}
+
+.gh-head-menu{
+    list-style: none;
+    margin: 2;
+}
+
+.cover-content .gh-head-menu li{
+    display: inline;
+    padding: 5px 10px;
+    background-color: rgba(250, 235, 215, 0.401);
+}

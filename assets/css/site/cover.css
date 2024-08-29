@@ -1,7 +1,7 @@
 .site-cover {
     z-index: unset !important;
     display: flex;
-    min-height: 500px;
+    min-height: 75vh;
 }
 
 .site-cover .search {
@@ -36,6 +36,16 @@
     font-size: 3.6rem;
     font-weight: 600;
     line-height: 1.4;
+    word-break: break-word;
+}
+
+.cover-small-description{
+    margin-top: 10vh;
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
     word-break: break-word;
 }
 

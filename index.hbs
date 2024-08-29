@@ -1,41 +1,98 @@
-{{!< default}}
+{{!< default}} <div class="gh-outer">
+    <main class="site-main gh-inner">
 
-<div class="gh-outer">
-<main class="site-main gh-inner">
-
-    {{#if @custom.show_featured_posts}}
+        {{#if @custom.show_featured_posts}}
         {{> "featured-posts"}}
-    {{/if}}
+        {{/if}}
 
-    {{#get "tags" limit="all"}}
-    <div class="topic-feed">
-
-        {{#foreach tags}}
+        <div class="topic-feed">
             <section class="topic">
                 <header class="topic-header">
-                    <h2 class="topic-name">
-                        <a href="{{url}}">{{name}}</a>
+                    <h2 class="topic-name" id="work">
+                        <a href="{{url}}/#work">Active engagements</a>
                     </h2>
                 </header>
-                {{#get "posts" order="published_at asc" filter="tag:{{slug}}" limit="5" as |featured|}}
-                    <ul class="topic-article-feed">
-                        {{#foreach featured}}
-                        <li class="topic-article">
-                            <h3 class="topic-article-title">
-                                <a class="topic-article-link" href="{{url}}">
-                                    {{> "icons/chevron-right"}} {{title}}
-                                </a>
-                            </h3>
-                        </li>
-                        {{/foreach}}
-                    </ul>
+                {{#get "pages" order="published_at asc" filter="tag:active-engagement" limit="5" as |featured|}}
+                <ul class="topic-article-feed">
+                    {{#foreach featured}}
+                    <figure class="post-media">
+                        <div class="u-placeholder same-height horizontal">
+                            <a class="post-image-link" href="{{url}}">
+                                {{#if feature_image}}
+                                <img class="post-image u-object-fit" src="{{img_url feature_image size=" l"}}"
+                                    alt="{{title}}">
+                                {{/if}}
+                            </a>
+                        </div>
+                    </figure>
+                    <li class="topic-article">
+                        <h3 class="topic-article-title">
+                            <a class="topic-article-link" href="{{url}}">
+                                {{> "icons/chevron-right"}} {{title}}
+                            </a>
+                        </h3>
+                        <small>{{tags}}</small>
+                    </li>
+                    {{/foreach}}
+                </ul>
                 {{/get}}
-                <a class="topic-more" href="{{url}}">Show more →</a>
+                <a class="topic-more" href="{{url}}about">Show more →</a>
             </section>
-        {{/foreach}}
+            <section class="topic">
+                <header class="topic-header">
+                    <h2 class="topic-name" id="work">
+                        <a href="{{url}}/#work">From our work</a>
+                    </h2>
+                </header>
+                {{#get "posts" order="published_at asc" filter="tag:magazine" limit="5" as |featured|}}
+                <ul class="topic-article-feed">
+                    {{#foreach featured}}
+                    <figure class="post-media">
+                        <div class="u-placeholder same-height horizontal">
+                            <a class="post-image-link" href="{{url}}">
+                                {{#if feature_image}}
+                                <img class="post-image u-object-fit" src="{{img_url feature_image size=" l"}}"
+                                    alt="{{title}}">
+                                {{/if}}
+                            </a>
+                        </div>
+                    </figure>
+                    <li class="topic-article">
+                        <h3 class="topic-article-title">
+                            <a class="topic-article-link" href="{{url}}">
+                                {{> "icons/chevron-right"}} {{title}}
+                            </a>
+                        </h3>
+                        <small>{{tags}}</small>
+                    </li>
+                    {{/foreach}}
+                </ul>
+                {{/get}}
+                <a class="topic-more" href="{{url}}magazine">Show more →</a>
+            </section>
+            <section class="topic">
+                {{#get "posts" order="published_at asc" filter="tag:fieldnotes" limit="5" as |featured|}}
+                <header class="topic-header">
+                    <h2 class="topic-name" id="fieldnotes">
+                        <a href="{{url}}/#fieldnotes">Field notes</a>
+                    </h2>
+                </header>
+                <ul class="topic-article-feed">
+                    {{#foreach featured}}
+                    <li class="topic-article">
+                        <h3 class="topic-article-title">
+                            <a class="topic-article-link" href="{{url}}">
+                                {{> "icons/chevron-right"}} {{title}}
+                            </a>
+                        </h3>
+                        <small>{{tags}}</small>
+                    </li>
+                    {{/foreach}}
+                </ul>
+                {{/get}}
+                <a class="topic-more" href="{{url}}fieldnotes">Show more →</a>
+            </section>
+        </div>
 
+    </main>
     </div>
-    {{/get}}
-
-</main>
-</div>

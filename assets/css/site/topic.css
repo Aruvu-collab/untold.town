@@ -1,6 +1,6 @@
 .topic-feed {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 80px 60px;
 }
 
@@ -30,6 +30,13 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+}
+
+.topic-article-grid{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
 }
 
 .topic-article-title {

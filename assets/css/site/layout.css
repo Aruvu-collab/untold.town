@@ -14,8 +14,21 @@
     padding-block: 0;
 }
 
+.site-main{
+    margin: 0px 20%;
+}
+
 @media (max-width: 767px) {
     .site-content {
         padding-bottom: 0;
     }
 }
+
+.gh-footer{
+    margin-top: 30vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 15vh;
+}
+

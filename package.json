@@ -42,9 +42,18 @@
         },
         "card_assets": true,
         "custom": {
+            "small_description": {
+                "type": "text",
+                "group": "brand",
+                "default": "A Ghost theme"
+            },
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "options": [
+                    "Logo on the left",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
                 "default": "Logo on the left"
             },
             "title_font": {
@@ -76,9 +85,11 @@
         "zip": "gulp zip"
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.5.14",
         "@tryghost/shared-theme-assets": "2.4.5",
         "autoprefixer": "10.4.20",
         "beeper": "2.1.0",
+        "concurrently": "^8.2.2",
         "cssnano": "7.0.5",
         "gscan": "4.43.2",
         "gulp": "5.0.0",
