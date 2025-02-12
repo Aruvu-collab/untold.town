@@ -1,0 +1,41 @@
+{{!< default}} <main id="#main" class="site-main ">
+    <header class="topic-header">
+        <h2 class="topic-name" id="work">
+            <a href="{{url}}#work">Fieldnotes</a>
+        </h2>
+        <small>{{@custom.fieldnotes_description}}</small>
+    </header>
+    <div class="topic-feed topic-article-feed">
+        {{!-- Loop through posts 1 to 5 --}}
+        {{#foreach posts from="1" to="5"}}
+        <div>
+            <figure class="post-media">
+                <div class="u-placeholder same-height horizontal">
+                    <a class="post-image-link" href="{{url}}">
+                        {{#if feature_image}}
+                        <img class="post-image u-object-fit" src="{{img_url feature_image size=" l"}}" alt="{{title}}">
+                        {{/if}}
+                    </a>
+                </div>
+            </figure>
+            <li class="topic-article">
+                <a class="topic-article-link" href="{{url}}">
+                    <h3 class="topic-article-title">
+                        {{> "icons/chevron-right"}} {{title}}
+
+                    </h3>
+                    <small>{{date published_at format="MMMM DD, YYYY"}}</small>
+                    <small>{{tags}}</small>
+                </a>
+            </li>
+        </div>
+        {{/foreach}}
+
+
+    </div>
+
+    {{!-- Show the pagination helper when there's more than one page --}}
+    {{#match pagination.pages ">" 1}}
+    {{pagination}}
+    {{/match}}
+    </main>

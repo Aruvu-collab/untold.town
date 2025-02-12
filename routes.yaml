@@ -1,0 +1,44 @@
+routes:
+  /: index
+  /places/hyderabad-karnataka/:
+    controller: channel
+    filter: tag:hyderabad-karnataka
+    template: placeview
+    data: page.hyderabad-karnataka
+  /places/kundapura/:
+    controller: channel
+    filter: tag:kundapura
+    template: placeview
+    data: page.kundapura
+  /places/chennai/:
+    controller: channel
+    filter: tag:chennai
+    template: placeview
+    data: page.chennai
+  /places/channapatna/:
+    controller: channel
+    filter: tag:channapatna
+    template: placeview
+    data: page.channapatna
+
+collections:
+  /fieldnotes/:
+    permalink: /fieldnotes/{year}/{month}/{slug}/
+    filter: tag:fieldnotes
+    template: fieldnotes
+  /magazine/:
+    permalink: /magazine/{year}/{month}/{slug}/
+    filter: tag:magazine
+    template: magazine
+  /engagements/:
+    permalink: /engagements/{slug}/
+    filter: tag:active-engagement
+    template: engagements
+  /organisations/:
+    permalink: /organisations/{slug}/
+    filter: tag:organisations
+    template: organisations
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

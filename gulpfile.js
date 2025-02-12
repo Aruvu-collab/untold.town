@@ -15,6 +15,7 @@ const zip = require('gulp-zip');
 const easyimport = require('postcss-easy-import');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+var tailwindcss = require('tailwindcss'); // add this line for Tailwind
 
 function serve(done) {
     livereload.listen();
@@ -38,13 +39,16 @@ function hbs(done) {
 }
 
 function css(done) {
+    var processors = [
+        easyimport,
+        tailwindcss(),
+        autoprefixer(),
+        cssnano()
+    ];
+
     pump([
-        src('assets/css/screen.css', {sourcemaps: true}),
-        postcss([
-            easyimport,
-            autoprefixer(),
-            cssnano()
-        ]),
+        src('assets/css/*.css', {sourcemaps: true}),
+        postcss(processors),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
@@ -90,7 +94,7 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
 const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);

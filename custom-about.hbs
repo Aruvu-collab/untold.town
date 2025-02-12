@@ -4,14 +4,16 @@
         {{#match @page.show_title_and_feature_image}}
         <header class="gh-article-header gh-canvas">
             <h1 class="gh-article-title">{{title}}</h1>
-            {{> "post-image"}}
+            <div class="gh-article-header-about">
+                <img class="" src="{{img_url feature_image size=" l"}}" alt="{{title}}"></img> {{content}}
+            </div>
         </header>
-        {{/match}}
-
         <div class="post-content gh-content gh-canvas">
-            {{content}}
+            <h2>Right to refuse</h2>
+            <p>We request all the contributors/authors/editors of Untold Town to take consent from individuals, organisations and communities at different stages of content creation for this journal. We acknowledge, practice and endorse the necessity for the 'Right to Withdraw Consent' to always remain with individuals or any member of a community appearing in any of the articles in Untold Town. If you find any content on Untold Town such as image, video, audio, text or any creative content that raises any concern then please write to us on editorial@thelivinglabs.net</p>
+            
         </div>
-
+        {{/match}}
     </article>
     <div class="gh-inner">
         <header class="topic-header">
@@ -19,33 +21,26 @@
                 <a href="{{url}}/#work">Organisations involved</a>
             </h2>
         </header>
-        <section class="topic-article-grid">
+        <section class="organisations topic-article-feed">
             {{#get "pages" order="published_at asc" filter="tag:organisations" limit="5" as |featured|}}
             {{#foreach featured}}
-            <div>
-                <figure class="post-media">
-                    <div class="u-placeholder same-height horizontal">
-                        <a class="post-image-link" href="{{url}}">
-                            {{#if feature_image}}
-                            <img class="post-image u-object-fit" src="{{img_url feature_image size=" l"}}"
-                                alt="{{title}}">
-                            {{/if}}
-                        </a>
-                    </div>
+            <div class="about-icon-name ">
+                <figure class="post-media  same-height horizontal">
+                    <a class="post-image-link " href="{{url}}">
+                        {{#if feature_image}}
+                        <img class="about-image" src="{{img_url feature_image size=" l"}}" alt="{{title}}">
+                        {{/if}}
+                    </a>
+                    {{!-- <a class="topic-article-link" href="{{url}}">
+                    </a> --}}
                 </figure>
-                <li class="topic-article">
-                    <h3 class="topic-article-title">
-                        <a class="topic-article-link" href="{{url}}">
-                            {{> "icons/chevron-right"}} {{title}}
-                        </a>
-                    </h3>
-                    <small>{{tags}}</small>
-                </li>
+                <div>
+                    {{excerpt}}
+                </div>
             </div>
             {{/foreach}}
             {{/get}}
         </section>
-        <a class="topic-more" href="{{url}}">Show more →</a>
         </main>
 
         {{/post}}

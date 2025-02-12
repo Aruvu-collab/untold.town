@@ -5,6 +5,16 @@
     object-fit: cover;
 }
 
+.u-object-fit--contain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.u-max-300 {
+    max-height: 300px;
+    width:auto;
+}
 .u-permalink {
     position: absolute;
     top: 0;
@@ -25,6 +35,9 @@
     height: 0;
 }
 
+.u-organisations{
+    
+}
 .u-placeholder.horizontal {
     padding-bottom: 50%;
 }

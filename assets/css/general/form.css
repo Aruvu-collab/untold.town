@@ -24,19 +24,14 @@ input[type="search"]:focus {
 }
 
 .form-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     display: flex;
+    background-color: transparent;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
     padding: 0;
     font-size: 20px;
-    color: var(--white-color);
+    color: black;
     cursor: pointer;
-    background-color: var(--primary-color);
     border: 0;
     border-radius: 4px;
     outline: none;

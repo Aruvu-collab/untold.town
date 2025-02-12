@@ -1,0 +1,86 @@
+{{!< default}} <main id="#main" class="site-main ">
+    {{#page}}
+    <header class="page-header">
+        <h1 class="topic-name" id="work">
+            <a href="{{url}}/#work">{{title}}</a>
+        </h1>
+
+            {{content}} 
+    </header>
+    {{/page}}
+    <div class="topic-feed-home">
+        {{!-- Loop through posts 1 to 5 --}}
+
+        <div class="topic">
+            <div class="topic-header">
+                <h2 class="topic-name" id="work">
+                    <a href="{{url}}/#work">From our work</a>
+                </h2>
+                <small>{{@custom.magazine_description}}</small>
+            </div>
+            <ul class="topic-article-feed">
+                {{#if posts}}
+                {{#foreach posts from="1" to="10" as |post|}}
+                {{#has tag="magazine"}}
+                <div class="post-feature-mag">
+                    <div class="post-feature-img-container">
+                        {{#if feature_image}}
+                        <img class="post-feature-img" src="{{img_url feature_image size=" s"}}"
+                                alt="{{title}}">
+                        {{/if}}
+                    </div>
+                    <div class="post-feature-title-container">
+                        <a class="topic-article-link" href="{{url}}">
+                            <h3 class="post-feature-title">
+                                {{> "icons/chevron-right"}} {{title}}
+                            </h3>
+                            <small>{{date published_at format="MMMM DD, YYYY"}}</small>
+                            <small>{{tags}}</small>
+                        </a>
+                    </div>
+                    </li>
+                </div>
+                {{/has}}
+                {{/foreach}}
+                {{else}}
+                <p>Looks like we haven't begun to write about our work from here yet. Come back later or better,
+                    subscribe!</p>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="topic">
+            <div class="topic-header">
+                <h2 class="topic-name" id="work">
+                    <a href="{{url}}/#work">Fieldnotes</a>
+                </h2>
+                <small>{{@custom.fieldnotes_description}}</small>
+            </div>
+            <ul class="topic-article-feed">
+                {{#if posts}}
+                {{#foreach posts from="1" to="10" filter="tag:fieldnotes" as |post|}}
+                {{#has tag="fieldnotes"}}
+                <li class="topic-article">
+                    <a class="topic-article-link" href="{{url}}">
+                        <h3 class="topic-article-title">
+                            {{> "icons/chevron-right"}} {{title}}
+                        </h3>
+                        <small>{{tags}}</small>
+                    </a>
+                </li>
+                {{/has}}
+                {{/foreach}}
+                {{else}}
+                <p>Looks like we haven't begun to write about our work from here yet. Come back later or better,
+                    subscribe!</p>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+
+
+
+    {{!-- Show the pagination helper when there's more than one page --}}
+    {{#match pagination.pages ">" 1}}
+    {{pagination}}
+    {{/match}}
+    </main>

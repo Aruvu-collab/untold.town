@@ -1,19 +1,26 @@
 .topic-feed {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 80px 60px;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 60px;
+}
+
+.topic-feed-home {
+    @apply grid grid-cols-1 md:grid-cols-[4fr_2fr] gap-20;
 }
 
 .topic-header {
-    display: flex;
     padding-bottom: 12px;
     margin-bottom: 20px;
+    margin-top: 50px;
     border-bottom: 1px solid var(--mid-gray-color);
 }
 
+.page-header{
+    padding-bottom: 12px;
+    margin-top: 20px;
+}
+
 .topic-name {
-    margin-bottom: 0;
-    font-size: 2.2rem;
     letter-spacing: -0.005em;
 }
 
@@ -32,25 +39,28 @@
     list-style-type: none;
 }
 
+.topic-article{
+}
 .topic-article-grid{
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    @apply md:grid md:grid-cols-3 md:gap-4;
     gap: 60px;
 }
 
+.organisations{
+
+}
 .topic-article-title {
     margin-bottom: 0;
-    font-size: 1.5rem;
+    @apply text-3xl;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0;
     word-break: break-word;
 }
 
-.topic-article-link {
-    display: flex;
-    padding: 7px 0;
+.topic-article {
+    @apply py-2;
 }
 
 .topic-article-link svg {
@@ -62,7 +72,7 @@
 .topic-more {
     display: inline-block;
     margin-top: 20px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--primary-color);
     letter-spacing: -0.005em;
 }

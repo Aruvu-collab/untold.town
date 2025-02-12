@@ -1,23 +1,24 @@
 {
     "name": "ease",
-    "description": "A Ghost theme",
+    "description": "A Ghost theme for untold.town",
     "version": "1.0.0",
-    "private": true,
+    "private": false,
     "engines": {
         "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Aruvu Collaboratory",
+        "email": "wellbeing@aruvu.org",
+        "url": "https://aruvu.org"
     },
     "keywords": [
-        "ghost",
+        "organisation",
+        "magazine",
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://ease.ghost.io/about/",
+    "docs": "",
     "config": {
         "posts_per_page": 10,
         "image_sizes": {
@@ -46,6 +47,31 @@
                 "type": "text",
                 "group": "brand",
                 "default": "A Ghost theme"
+            },
+            "footer_left": {
+                "type": "text",
+                "group": "",
+                "default": "A Ghost theme"
+            },
+            "footer_right": {
+                "type": "text",
+                "group": "site wide",
+                "default": "A Ghost theme"
+            },
+            "fieldnotes_description" : {
+                "type": "text",
+                "group": "homepage",
+                "default": "A Ghost theme"
+            },
+            "magazine_description":{
+                "type": "text",
+                "group": "homepage",
+                "default": "A Ghost theme"
+            },
+            "engagements_description":{
+                "type": "text",
+                "group": "homepage",
+                "default": "Work we are involved in across all places"
             },
             "navigation_layout": {
                 "type": "select",
@@ -92,7 +118,7 @@
         "concurrently": "^8.2.2",
         "cssnano": "7.0.5",
         "gscan": "4.43.2",
-        "gulp": "5.0.0",
+        "gulp": "^5.0.0",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
@@ -102,5 +128,9 @@
         "postcss": "8.4.41",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
+    },
+    "dependencies": {
+        "tailwind": "^4.0.0",
+        "tailwindcss": "^3.4.11"
     }
 }

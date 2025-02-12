@@ -6,8 +6,13 @@
 
 .site-content {
     flex-grow: 1;
-    padding-top: 60px;
+    padding-top: 10px;
     padding-bottom: 30px;
+    @apply min-h-screen;
+}
+
+body{
+    background-color: var(--background-color);
 }
 
 .page-template .site-content {
@@ -15,7 +20,7 @@
 }
 
 .site-main{
-    margin: 0px 20%;
+    @apply mx-auto w-[90vw] sm:w-[80vw] md:w-[65vw] lg:w-[65vw] mx-auto;
 }
 
 @media (max-width: 767px) {
@@ -25,10 +30,22 @@
 }
 
 .gh-footer{
-    margin-top: 30vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px;
-    margin-bottom: 15vh;
+    @apply my-[30vh] w-[70vw] p-10 mx-auto;
+    background-color: var(--primary-theme);
+    @apply grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 ;
+    background-image: "{{asset 'images/footer-tile.jpg }}";
 }
 
+.gh-foot-menu .nav li + li::before {
+    content: none !important;
+}
+
+.gh-foot-menu .nav{
+    display: block !important;
+    align-items: baseline;
+}
+
+.about-icon-name{
+    
+    @apply md:grid md:grid-cols-2 md:gap-8 py-10 ;
+}

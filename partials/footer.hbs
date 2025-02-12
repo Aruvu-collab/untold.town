@@ -1,15 +1,6 @@
 <footer class="gh-inner gh-footer">
-
     <div>
-        This discord server is a space for different collectives working collaboratively in India, to do some of their
-        thinking in a public space. Currently it houses Team YUVAA, Living Labs Network and Forum, Design Beku, Janastu
-        and Agamashaala. As more people join us, please reach out to @micahbitwa or @shreyas_srivatsa if there's
-        something particular you want to do with the space like change permissions, add channels or integrations.
-
-    </div>
-
-
-    <div>
+        {{@custom.footer_left}}
         {{#if @site.secondary_navigation}}
         <nav class="gh-foot-menu">
             {{navigation type="secondary"}}
@@ -18,6 +9,6 @@
     </div>
 
     <div>
-        Organisations: Living Labs Network, Team YUVAA, Aruvu Collaboratory
+        {{@custom.footer_right}}
     </div>
 </footer>

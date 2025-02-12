@@ -1,13 +1,31 @@
-# Ease
+# A custom theme for Untold.Town
 
-A versatile [Ghost](https://github.com/TryGhost/Ghost) theme suitable for documentation. Publish your posts or business information with ease.
+This is a custom theme that has been built on top of the default theme `ease` from Ghost. This has been built with a templating language called handlebars that Ghost uses.
 
-**Demo: https://ease.ghost.io**
+# Some quirks of Ghost and Handlebars
 
-# Instructions
+There are three major categories of contents which determines styling and templating. They are also determined by `routes.yaml` which makes collections and determines templates as well. This page will attempt to collect all of those quirks under one simple handbook
 
-1. [Download this theme](https://github.com/TryGhost/Ease/archive/main.zip)
-2. Log into Ghost, and go to the `Design` settings area to upload the zip file
+## Routing
+
+### By post type
+
+### By region
+
+### Misc pages
+
+## Content types
+
+- page
+- post
+
+## Taxonomy
+
+- tag
+- post
+
+
+
 
 # Development
 
@@ -19,20 +37,7 @@ yarn
 
 # Run build & watch for changes
 yarn dev
-```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
-
-The `zip` Gulp task packages the theme files into `dist/ease.zip`, which you can then upload to your site.
-
-```bash
+# Build and upload to site
 yarn zip
 ```
-
-# Contribution
-
-This repo is synced automatically with [TryGhost/Themes](https://github.com/TryGhost/Themes) monorepo. If you're looking to contribute or raise an issue, head over to the main repository [TryGhost/Themes](https://github.com/TryGhost/Themes) where our official themes are developed.
-
-# Copyright & License
-
-Copyright (c) 2013-2023 Ghost Foundation - Released under the [MIT license](LICENSE).

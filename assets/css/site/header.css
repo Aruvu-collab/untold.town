@@ -1,28 +1,58 @@
 .gh-head-logo {
-    letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
 }
 
+.gh-head-logo img {
+  max-height: 70px !important;
+}
+
+.gh-home-brand {
+}
+.gh-home-logo img {
+  max-height: 100px !important;
+}
+
+.gh-home-logo {
+  margin: auto;
+}
 .gh-head-menu,
 .gh-head-link {
-    font-size: 1.5rem;
-    font-weight: 500;
+  @apply text-2xl;
+  font-weight: 500;
 }
 
+.gh-head-menu a {
+  color: var(--primary-theme);
+}
 .gh-head-menu::after {
-    display: none;
+  display: none;
 }
 
-.gh-head{
-    height: 70px
+.gh-head-brand {
+  @apply h-[80px];
+}
+.is-head-stacked .gh-head-brand {
+  @apply !h-[80px];
 }
 
-.gh-head-menu{
-    list-style: none;
-    margin: 2;
+.is-head-stacked .gh-head-menu::before {
+  background-color: transparent !important;
+}
+.gh-head {
+  @apply m-0 md:m-2;
+  background-color: var(--background-color) !important;
 }
 
-.cover-content .gh-head-menu li{
-    display: inline;
-    padding: 5px 10px;
-    background-color: rgba(250, 235, 215, 0.401);
+.gh-head-menu {
+  list-style: none;
+  margin: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.cover-content .gh-head-menu li {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px 1px;
+  background-color: var(--primary-highlight-theme);
 }

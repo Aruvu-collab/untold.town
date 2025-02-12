@@ -1,3 +1,12 @@
 .gh-article-image {
     grid-column: main-start / main-end;
 }
+
+.gh-article-header-about{
+    @apply grid md:grid-cols-[1fr_5fr] md:gap-20; 
+}
+
+.gh-article-header-about img{
+    @apply w-80 p-4;
+}
+
